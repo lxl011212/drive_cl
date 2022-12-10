@@ -9,22 +9,20 @@ export default function Login() {
   const passwordRef = useRef()
   const { login } = useAuth()
   const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [load, setLoad] = useState(false)
   const history = useHistory()
 
   async function handleSubmit(e) {
-    e.preventDefault()
-
+    e.preventDefault();
     try {
       setError("")
-      setLoading(true)
+      setLoad(true)
       await login(emailRef.current.value, passwordRef.current.value)
       history.push("/")
     } catch {
       setError("Failed to log in")
     }
-
-    setLoading(false)
+    setLoad(false);
   }
 
   return (
@@ -42,7 +40,7 @@ export default function Login() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={load} className="w-100" type="submit">
               Log In
             </Button>
           </Form>
@@ -52,7 +50,7 @@ export default function Login() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        <Link to="/signup">Sign Up</Link>
       </div>
     </CenteredContainer>
   )
