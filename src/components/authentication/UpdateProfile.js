@@ -19,7 +19,7 @@ export default function UpdateProfile() {
       return setError("Passwords do not match")
     }
 
-    const promises = []
+    const promises = [];
     setLoading(true)
     setError("")
 
@@ -67,7 +67,7 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Re-enter password</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordConfirmRef}

@@ -16,7 +16,7 @@ export default function AddFileButton({ currentFolder }) {
     const file = e.target.files[0]
     if (currentFolder == null || file == null) return
 
-    const id = uuidV4()
+    const id = uuidV4();
     setUploadingFiles(prevUploadingFiles => [
       ...prevUploadingFiles,
       { id: id, name: file.name, progress: 0, error: false },
