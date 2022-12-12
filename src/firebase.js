@@ -2,14 +2,16 @@ import firebase from "firebase/app"
 import "firebase/auth"
 import "firebase/firestore"
 import "firebase/storage"
+import "firebase/database"; 
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyAQflwHC-E-IlYsb_EAmJYMCJfw1vS_lnQ",
     authDomain: "drive-clone-92f40.firebaseapp.com",
+    databaseURL: "https://drive-clone-92f40.firebaseio.com",
     projectId: "drive-clone-92f40",
     storageBucket: "drive-clone-92f40.appspot.com",
     messagingSenderId: "572998713303",
-    appId: "1:572998713303:web:f0aaa75f9eaa25ceb01592"
+    appId: "1:572998713303:web:f0aaa75f9eaa25ceb01592",
 })
 
 const firestore = app.firestore()
